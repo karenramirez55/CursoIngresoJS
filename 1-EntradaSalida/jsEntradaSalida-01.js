@@ -6,7 +6,5 @@ function mostrar()
 	alert("Esto funciona de maravillas");
 	alert("Esto funciona de maravillas");
 	alert("Esto funciona de maravillas");
-	alert("Esto funciona de maravillas");
-	alert("Esto funciona de maravillas");
 }
 
