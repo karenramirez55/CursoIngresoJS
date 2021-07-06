@@ -5,10 +5,12 @@ function mostrar()
 {	
 	let nombre;
 	let edad;
+	let mensaje;
 
 	nombre=document.getElementById("txtIdNombre").value;
 	edad=document.getElementById("txtIdEdad").value;
+	mensaje="Ud se llama "+ nombre + " y tiene "+ edad+ " años";
 
-	alert("Ud se llama " +nombre + " y tiene " + edad + " años");
+	alert(mensaje);
 
 }
