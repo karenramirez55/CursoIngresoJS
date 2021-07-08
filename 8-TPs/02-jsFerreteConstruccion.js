@@ -53,7 +53,7 @@ function Materiales ()
     area=largo*ancho;
     cemento=area*2;
     cal=area*3;
-    mensaje="Para el contrapiso cantidad de bolsas cemento: "+cemento+ " y esta cantidad de bolsas de cal "+ cal;
+    mensaje="Para el contrapiso cantidad de bolsas cemento: "+cemento+ " y esta cantidad de bolsas de cal: "+ cal;
     
     alert(mensaje);
 
