@@ -1,19 +1,13 @@
+//AUTOR: Ramirez Karen Denise, EJERCICIO IF 04 (ENVIE ERRONEAMENTE EL EJERCICIO 6 PONIENDO NUMERO 4)
 function mostrar()
 {
-	let edad=parseInt(document.getElementById("txtIdEdad").value);
+	let edad=document.getElementById("txtIdEdad").value;
 
-	if (edad>=18) 
-	{
-		alert("Ud es adulto");
-	}
-	else if (edad>13 && edad<=17) 
+	if (edad>12 && edad<18) 
 	{
 		alert("Ud es adolescente");
 	}
-	else
-	{
-		alert("Ud es un  niño");
-	}
+	
 
 
 }//FIN DE LA FUNCIÓN

@@ -1,9 +1,12 @@
+//AUTOR: Ramirez Karen Denise, EJERCICIO: IF 02
+
 function mostrar()
 {
-	let edad=18;
-	edad=parseInt(document.getElementById("txtIdEdad").value);
+	let edad;
+	edad=document.getElementById("txtIdEdad").value;
+	edad=parseInt(edad);
 
-	if (edad>=18) 
+	if (edad>17) 
 	{
 		alert("Ud es mayor de edad");
 	}

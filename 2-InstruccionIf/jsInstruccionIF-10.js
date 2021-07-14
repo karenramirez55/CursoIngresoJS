@@ -1,6 +1,29 @@
+//AUTOR: Ramirez Karen Denise, EJERCICIO IF 10.
 function mostrar()
 {
-	//Genero el número RANDOM entre 1 y 10 
-	alert("ok");
+	let random;
+	random=Math.floor(Math.random()*10)+1;
+	let mensaje;
+	
 
+	if (random>8) 
+	{
+		mensaje=random+" :EXCELENTE";
+		
+		
+	}
+	else
+	{
+		if (random>3) 
+		{
+			mensaje=random+" :APROBO";
+			
+		}
+		else
+		{
+			mensaje=random+" Vamos la proxima se puede";
+		}
+	}
+	alert(mensaje);
+	
 }//FIN DE LA FUNCIÓN

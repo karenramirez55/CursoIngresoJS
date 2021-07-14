@@ -1,12 +1,11 @@
+//AUTOR: Ramirez Karen Denise, EJERCICIO: IF 05
+
 function mostrar()
 {
-	let edad=parseInt(document.getElementById("txtIdEdad").value);
+	let edad=document.getElementById("txtIdEdad").value;
+	edad=parseInt(edad);
 
-	if (edad>13 && edad<=17) 
-	{
-		alert("Ud es adolescente");
-	}
-	else
+	if (edad>17 || edad<13) 
 	{
 		alert("Ud no es adolescente");
 	}
