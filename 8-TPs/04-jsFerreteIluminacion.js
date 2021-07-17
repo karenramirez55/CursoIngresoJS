@@ -11,89 +11,113 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
 function CalcularPrecio () 
 {
 
-    let precioLampara;
-    let cantidadDeLamparas;
+    let precioLamparas;
     let marcas;
-    let precioFinalDescuento;
+    let precioFinalConDescuento;
+    let cantidadLamparas;
     let descuento;
-    
+    let ingresosBrutos;
+    let sumaIngresosBrutos;
 
-    cantidadDeLamparas=document.getElementById("txtIdCantidad").value;
-    precioLampara=cantidadDeLamparas*35;
     marcas=document.getElementById("Marca").value;
+    cantidadLamparas=document.getElementById("txtIdCantidad").value;
+    cantidadLamparas=parseInt(cantidadLamparas);
+    precioLamparas=cantidadLamparas*35;
     
-
-    if (cantidadDeLamparas==5 && marcas=="ArgentinaLuz") 
-    {
-        descuento=precioLampara*40/100;
-        precioFinalDescuento=precioLampara-descuento;
-        document.getElementById("txtIdprecioDescuento").value=precioFinalDescuento;
-        
-    }
-    else
-    {
-        if (cantidadDeLamparas==5 && marcas !="ArgentinaLuz") 
+    if (cantidadLamparas>5) 
         {
-            descuento=precioLampara*30/100;
-            precioFinalDescuento=precioLampara-descuento;
-            document.getElementById("txtIdprecioDescuento").value=precioFinalDescuento;
+            descuento=precioLamparas*50/100;
+            precioFinalConDescuento=precioLamparas-descuento;
         }
         else
         {
-            if (cantidadDeLamparas==4 && marcas=="FelipeLamparas" || marcas=="ArgentinaLuz") 
+            if (cantidadLamparas==5) 
             {
-                descuento=precioLampara*25/100;
-                precioFinalDescuento=precioLampara-descuento;
-                document.getElementById("txtIdprecioDescuento").value=precioFinalDescuento;
-            }
-            else
-            {
-                if (cantidadDeLamparas==4 && marcas != "FelipeLamparas" && marcas !="ArgentinaLuz") 
+                if(marcas=="ArgentinaLuz")
                 {
-                    descuento=precioLampara*20/100;
-                    precioFinalDescuento=precioLampara-descuento;
-                    document.getElementById("txtIdprecioDescuento").value=precioFinalDescuento;
+                    descuento=precioLamparas*40/100;
+                     precioFinalConDescuento=precioLamparas-descuento;
                 }
                 else
                 {
-                    if (cantidadDeLamparas==3 && marcas =="ArgentinaLuz") 
+                    descuento=precioLamparas*30/100;
+                    precioFinalConDescuento=precioLamparas-descuento;
+                }
+            }
+             else
+             {
+                    if (cantidadLamparas==4) 
                     {
-                        descuento=precioLampara*15/100;
-                        precioFinalDescuento=precioLampara-descuento;
-                        document.getElementById("txtIdprecioDescuento").value=precioFinalDescuento;
-                    }
-                    else
-                    {
-                        if (cantidadDeLamparas==3 && marcas=="FelipeLamparas") 
+                        if(marcas=="ArgentinaLuz" || marcas =="FelipeLamparas")
                         {
-                            descuento=precioLampara*10/100;
-                            precioFinalDescuento=precioLampara-descuento;
-                            document.getElementById("txtIdprecioDescuento").value=precioFinalDescuento;
+                            descuento=precioLamparas*25/100;
+                             precioFinalConDescuento=precioLamparas-descuento;
                         }
                         else
                         {
-                            if (cantidadDeLamparas==3 && marcas != "FelipeLamparas" && marcas !="ArgentinaLuz") 
-                            {
-                                descuento=precioLampara*5/100;
-                                precioFinalDescuento=precioLampara-descuento;
-                                document.getElementById("txtIdprecioDescuento").value=precioFinalDescuento;
-                            }
-                            else
-                            {
-                                if (cantidadDeLamparas>5) 
-                                {
-                                    descuento=precioLampara*50/100;
-                                    precioFinalDescuento=precioLampara-descuento;
-                                }
-                            }
+                            descuento=precioLamparas*20/100;
+                            precioFinalConDescuento=precioLamparas-descuento;
                         }
                     }
+                    else
+                      {
+                          if (cantidadLamparas==3) 
+                         {
+                                if(marcas=="ArgentinaLuz")
+                                {
+                                    descuento=precioLamparas*15/100;
+                                    precioFinalConDescuento=precioLamparas-descuento;
+                                }
+                                else
+                                {
+                                    if(marcas=="FelipeLamparas")
+                                    {
+                                        descuento=precioLamparas*10/100;
+                                         precioFinalConDescuento=precioLamparas-descuento;
+                                    }
+                                    else
+                                    {
+                                        descuento=precioLamparas*5/100;
+                                        precioFinalConDescuento=precioLamparas-descuento;
+                                    }
+                                }
+                                
+                            }
+                           
+                        } 
                 }
-            }
             
+           
         }
-        
+
+    document.getElementById("txtIdprecioDescuento").value=precioFinalConDescuento;
+    if (precioFinalConDescuento>120) 
+    {
+        ingresosBrutos=precioFinalConDescuento*10/100;
+        sumaIngresosBrutos=precioFinalConDescuento+ingresosBrutos;
+
     }
-   
+    alert("Ud pago de IIBB $ "+ingresosBrutos+ " siendo el importe final $ "+sumaIngresosBrutos);
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+  
+        
+        
+    
 }
+
  	
