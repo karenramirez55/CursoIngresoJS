@@ -16,13 +16,13 @@ function CalcularPrecio ()
     let precioLampara=35;
     let descuento;
     let precioSinDescuento;
-    
+    let suma;
+    let precioMasIva;
 
     cantidadDeLamparas=document.getElementById("txtIdCantidad").value;
     cantidadDeLamparas=parseInt(cantidadDeLamparas);
     marcas=document.getElementById("Marca").value;
     precioSinDescuento=precioLampara*cantidadDeLamparas;
-
     
     switch(cantidadDeLamparas)
     {
@@ -36,6 +36,7 @@ function CalcularPrecio ()
                     descuento=(precioSinDescuento*30)/100;
                     break;
             }
+            break;
 
         case 4:
             switch(marcas)
@@ -48,22 +49,31 @@ function CalcularPrecio ()
                 descuento=(precioSinDescuento*20)/100;
                 break;
             }
-            case 3:
+            break;
+        case 3:
             switch(marcas)
             {
                 case "ArgentinaLuz":
-                 descuento=(precioSinDescuento*40)/100;
-                 break;
-                 default:
-                    descuento=(precioSinDescuento*30)/100;
-                    break;
+                 descuento=(precioSinDescuento*15)/100;
+                break;
+                case "FelipeLamparas":
+                descuento=(precioSinDescuento*10)/100;
+                break;
+                default:
+                descuento=(precioSinDescuento*05)/100;
+                break;
             }
-
+            break;
+            default:
+                descuento=(precioSinDescuento*50)/100;
     }
-
     precioConDescuento=precioSinDescuento-descuento;
     document.getElementById("txtIdprecioDescuento").value=precioConDescuento;
-  
-
-
+    
+    if (precioConDescuento>120) 
+    {
+        suma=(precioConDescuento*10)/100;
+        precioMasIva=suma+precioConDescuento;
+        alert("Ud pago el 10% de IIBB " +suma+ "total a pagar $ "+ precioMasIva);
+    }
 } 	

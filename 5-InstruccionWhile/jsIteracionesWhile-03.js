@@ -4,10 +4,16 @@ function mostrar()
 {
 	let ingreseClave;
 	ingreseClave=prompt("Ingrese su clave");
-	let contador;
-	contador=0;
+	
+	
 	
 
-	while(contador)
+	while(ingreseClave!="utn750")
+	{
+		alert("clave incorrecta");
+		ingreseClave=prompt("Ingrese su clave")
+		
+
+	}
 	
-}//FIN DE LA FUNCIÓN
+}
