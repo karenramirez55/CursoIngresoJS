@@ -8,6 +8,8 @@ function mostrar()
 	var minimo;
 	var respuesta;
 	var ingreseNumero;
+	var flag;
+	flag=0;
 	respuesta='s';
 	minimo=0;
 	maximo=0;
@@ -16,20 +18,28 @@ function mostrar()
 	{
 		ingreseNumero=prompt("Ingrese numero");
 		ingreseNumero=parseInt(ingreseNumero);
-		minimo=minimo+ingreseNumero;
-		maximo=maximo+ingreseNumero;
-
 		
-		if (maximo<ingreseNumero) 
+		if (flag==0) 
 		{
-			 maximo=ingreseNumero;
-		}
-		else
-		{
-			
+
+			maximo=ingreseNumero;
 			minimo=ingreseNumero;
-			
+			flag=1;
+				
 		}
+		if (ingreseNumero>maximo) 
+		{
+
+				maximo=ingreseNumero;
+		}
+				else
+				{
+					if (ingreseNumero<minimo) 
+					{
+						minimo=ingreseNumero;
+					}
+				}
+		
 
 		respuesta=prompt("quiere seguir ingresando numeros? 's' o 'n'");
 		document.getElementById("txtIdMinimo").value=minimo;
