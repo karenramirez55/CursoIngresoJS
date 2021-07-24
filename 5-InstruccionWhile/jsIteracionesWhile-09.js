@@ -11,9 +11,7 @@ function mostrar()
 	var flag;
 	flag=0;
 	respuesta='s';
-	minimo=0;
-	maximo=0;
-
+	
 	while (respuesta=='s') 
 	{
 		ingreseNumero=prompt("Ingrese numero");
@@ -32,13 +30,13 @@ function mostrar()
 
 				maximo=ingreseNumero;
 		}
-				else
-				{
-					if (ingreseNumero<minimo) 
-					{
-						minimo=ingreseNumero;
-					}
-				}
+		else
+		{
+			if (ingreseNumero<minimo) 
+			{
+				minimo=ingreseNumero;
+			}
+		}
 		
 
 		respuesta=prompt("quiere seguir ingresando numeros? 's' o 'n'");

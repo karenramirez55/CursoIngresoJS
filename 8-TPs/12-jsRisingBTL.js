@@ -17,49 +17,58 @@ function ComenzarIngreso ()
 	var legajo;
 	var nacionalidad;
 	var legajo;
+	var mensaje;
 
 	edadIngresada=prompt("Ingrese su edad");
 	edadIngresada=parseInt(edadIngresada);
-	sexoIngresado=prompt("ingrese su sexo 'm' o 'f' ");
-	estadoCivilIngresado=prompt("ingrese su estado civil 1)soltero 2)casado 3)divorciado 4)viudo");
-	estadoCivilIngresado=parseInt(estadoCivilIngresado);
-	sueldo=prompt("ingrese su sueldo, no puede ser menor a $8000");
-	sueldo=parseInt(sueldo);
-	legajo=prompt("ingrese su legajo de 4 cifras sin 0 a la izquierda ");
-	legajo=parseInt(legajo);
-	nacionalidad=prompt("ingrese nacionalidad A)Argentinos E)Extranjeros N)Nacionalizados");
-
-			while (edadIngresada>90 || edadIngresada<18) 
+	while (edadIngresada>90 || edadIngresada<18) 
 		{
+			alert("Dato incorrecto");
 			edadIngresada=prompt("Ingrese su edad");
 		}
 		
-		while (sexoIngresado!="m" && sexoIngresado != "f")
+	sexoIngresado=prompt("ingrese su sexo 'm' o 'f' ");
+	while (sexoIngresado!="m" && sexoIngresado != "f")
 			{
+				alert("Dato incorrecto");
 				sexoIngresado=prompt("ingrese su sexo 'm' o 'f' ");
 			}
 		
-		while (estadoCivilIngresado!=1 && estadoCivilIngresado !=2 && estadoCivilIngresado!=3 && estadoCivilIngresado!=4) 
-		{
-			
-			estadoCivilIngresado=prompt("ingrese su estado civil 1)soltero 2)casado 3)divorciado 4)viudo");
-		}
+	estadoCivilIngresado=prompt("ingrese su estado civil 1)soltero 2)casado 3)divorciado 4)viudo");
+	estadoCivilIngresado=parseInt(estadoCivilIngresado);
 		
-		while (sueldo<8000) 
+	while (estadoCivilIngresado!=1 && estadoCivilIngresado !=2 && estadoCivilIngresado!=3 && estadoCivilIngresado!=4) 
+	{
+		alert("Dato incorrecto");
+		estadoCivilIngresado=prompt("ingrese su estado civil 1)soltero 2)casado 3)divorciado 4)viudo");
+	}
+	sueldo=prompt("ingrese su sueldo, no puede ser menor a $8000");
+	sueldo=parseInt(sueldo);
+	while (sueldo<8000) 
 		{
+			alert("Dato incorrecto");
 			sueldo=prompt("ingrese su sueldo, no puede ser menor a $8000");
 		}
+	legajo=prompt("ingrese su legajo de 4 cifras sin 0 a la izquierda ");
+	legajo=parseInt(legajo);
 		
-		while (nacionalidad!="A" && nacionalidad!="E" && nacionalidad!="N" ) 
-		{
-			nacionalidad=prompt("ingrese nacionalidad A)Argentinos E)Extranjeros N)Nacionalizados");
-			
-		}
-		while(legajo<1000 || legajo >9999)
-		{
-			legajo=prompt("ingrese su legajo de 4 cifras sin 0 a la izquierda ");
-		}
+	while(legajo<1000 || legajo >9999)
+	{
+		alert("Dato incorrecto");
+		legajo=prompt("ingrese su legajo de 4 cifras sin 0 a la izquierda ");
+	}
 
+	nacionalidad=prompt("ingrese nacionalidad A)Argentinos E)Extranjeros N)Nacionalizados");
+	
+	while (nacionalidad!="A" && nacionalidad!="E" && nacionalidad!="N" ) 
+	{
+		alert("Dato incorrecto");
+		nacionalidad=prompt("ingrese nacionalidad A)Argentinos E)Extranjeros N)Nacionalizados");
+	
+		
+		
+	}
+	
 		document.getElementById("txtIdEdad").value="La edad ingresada es "+edadIngresada;
 		document.getElementById("txtIdSexo").value="El sexo es "+sexoIngresado;
 		document.getElementById("txtIdEstadoCivil").value="Su estado civil es "+estadoCivilIngresado;
